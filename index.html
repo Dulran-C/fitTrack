@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Lite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>FitTrack Lite</h1>
+
+        <!-- input section-->
+        <div class="input-section">
+            <input type="text" id="exercise" placeholder="Exercise Name">
+            <input type="number" id="sets" placeholder="Sets">
+            <input type="number" id="reps" placeholder="Reps">
+            <button onclick="addWorkout()">Add Workout</button>
+        </div>
+
+        <!--workout list-->
+        <ul id="workoutList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
