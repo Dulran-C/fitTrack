@@ -31,3 +31,23 @@ function addWorkout() {
     document.getElementById("sets").value = "";
     document.getElementById("reps").value = "";
 }
+
+function displayWorkouts() {
+    const list = document.getElementById("workoutList");
+    
+    // Clear list before re-rendering
+    list.innerHTML = "";
+
+    // Loop through workouts
+    workouts.forEach((workout, index) => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            ${workout.name} - ${workout.sets} sets x ${workout.reps} reps
+        `;
+
+        list.appendChild(li);
+    });
+}
+
+displayWorkouts();
