@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitTrack Lite</title>
+    <title>FitTracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>FitTrack Lite</h1>
+        <h1>FitTracker</h1>
 
-        <!-- input section-->
-        <div class="input-section">
-            <input type="text" id="exercise" placeholder="Exercise Name">
-            <input type="number" id="sets" placeholder="Sets">
-            <input type="number" id="reps" placeholder="Reps">
+        <div class="input-group">
+            <input type="text" id="exerciseName" placeholder="Exercise Name">
+            <input type="number" id="sets" placeholder="Sets" min="1">
+            <input type="number" id="reps" placeholder="Reps" min="1">
             <button onclick="addWorkout()">Add Workout</button>
         </div>
 
-        <!--workout list-->
         <ul id="workoutList"></ul>
     </div>
 
