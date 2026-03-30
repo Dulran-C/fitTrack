@@ -1,19 +1,15 @@
-//array to store workouts
 let workouts = [];
 
 function addWorkout() {
-    //get input values
     const exercise = document.getElementById("exercise").value;
     const sets = document.getElementById("sets").value;
     const reps = document.getElementById("reps").value;
 
-    // validation
     if (exercise === "" || sets === "" || reps === "") {
         alert("Please fill all fields");
         return;
     }
 
-    //create workout object
     const workout = {
         name: exercise,
         sets: sets,
@@ -21,33 +17,23 @@ function addWorkout() {
         completed: false
     };
 
-    //add to array
     workouts.push(workout);
 
-    console.log(workouts); // Debugging
-
-    //clear inputs
+    // Clear inputs
     document.getElementById("exercise").value = "";
     document.getElementById("sets").value = "";
     document.getElementById("reps").value = "";
+
+    displayWorkouts(); // IMPORTANT
 }
 
 function displayWorkouts() {
     const list = document.getElementById("workoutList");
-    
-    // Clear list before re-rendering
     list.innerHTML = "";
 
-    // Loop through workouts
-    workouts.forEach((workout, index) => {
+    workouts.forEach((workout) => {
         const li = document.createElement("li");
-
-        li.innerHTML = `
-            ${workout.name} - ${workout.sets} sets x ${workout.reps} reps
-        `;
-
+        li.textContent = workout.name + " - " + workout.sets + " sets x " + workout.reps + " reps";
         list.appendChild(li);
     });
 }
-
-displayWorkouts();
